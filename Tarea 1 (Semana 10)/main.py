@@ -32,7 +32,7 @@ def solicitar_float(mensaje):
 
 
 def mostrar_menu():
-    title = "Sistema de Gestión de Inventario (Mejorado)"
+    title = "Sistema de Gestión de Inventario V2"
     options = [
         "[1] Añadir producto",
         "[2] Eliminar producto",
