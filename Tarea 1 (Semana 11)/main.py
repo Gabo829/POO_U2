@@ -6,8 +6,10 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from servicios.inventario import Inventario
 from modelos.producto import Producto
+from pathlib import Path
 
-DATA_FILE = "inventario.json"
+# Archivo de datos situado siempre junto a este script (evita crear archivos fuera)
+DATA_FILE = str(Path(__file__).resolve().parent / "inventario.json")
 
 
 def limpiar_pantalla():
