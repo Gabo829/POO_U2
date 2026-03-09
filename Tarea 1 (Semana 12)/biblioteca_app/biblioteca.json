@@ -1,0 +1,13 @@
+{
+  "libros": [
+    {
+      "titulo": "Cien años de soledad",
+      "autor": [
+        "Gabriel Garcia Marquez"
+      ],
+      "categoria": "Novela",
+      "isbn": "978-0307474728"
+    }
+  ],
+  "usuarios": []
+}
