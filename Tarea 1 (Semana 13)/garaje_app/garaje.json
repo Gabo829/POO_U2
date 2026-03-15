@@ -1,0 +1,14 @@
+[
+  {
+    "placa": "ABC-123",
+    "marca": "Toyota",
+    "cilindraje": "1500",
+    "propietario": "María Pérez"
+  },
+  {
+    "placa": "XYZ-987",
+    "marca": "Honda",
+    "cilindraje": "1100",
+    "propietario": "Juan Gómez"
+  }
+]
