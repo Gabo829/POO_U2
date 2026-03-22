@@ -1,0 +1,12 @@
+[
+  {
+    "cedula": "1234567890",
+    "nombre": "María Pérez",
+    "motivo": "Reunión"
+  },
+  {
+    "cedula": "0987654321",
+    "nombre": "Juan Gómez",
+    "motivo": "Entrega"
+  }
+]
