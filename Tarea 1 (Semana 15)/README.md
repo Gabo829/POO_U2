@@ -40,9 +40,10 @@ Tarea 1 (Semana 15)
 Feedback visual: las tareas completadas muestran el emoji `✔️` y las pendientes `❌` al inicio de la línea.
 
 ## Persistencia
-- Archivo: `tareas.json` (ubicado junto a `main.py`).
+- Archivo: `tareas.json` (ubicado junto a `main.py` y al `.exe`).
 - Al iniciar, la aplicación carga `tareas.json` si existe.
 - Al agregar/eliminar/marcar una tarea, se guarda automáticamente.
+
 
 ## Ejecución
 1. Abrir una terminal en la carpeta `lista_tareas_app`.

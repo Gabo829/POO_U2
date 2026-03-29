@@ -2,6 +2,7 @@ from modelos.tarea import Tarea
 from typing import List, Optional
 import json
 from pathlib import Path
+import sys
 
 
 class TareaServicio:
@@ -13,11 +14,31 @@ class TareaServicio:
     def __init__(self):
         self._tareas: List[Tarea] = []
         self._next_id = 1
-        self._data_file = Path(__file__).resolve().parent.parent / "tareas.json"
+        # Determinar ruta de datos:
+        # - Si la aplicación está 'frozen' (empaquetada por PyInstaller),
+        #   escribir junto al ejecutable (`sys.executable`).
+        # - Si no está empaquetada, escribir en la carpeta del paquete.
+        if getattr(sys, "frozen", False):
+            # En modo onefile PyInstaller el proceso extrae a un directorio
+            # temporal; `sys.executable` puede apuntar a ese ejecutable temporal.
+            # Para garantizar que los datos se guarden junto al .exe original,
+            # usamos `sys.argv[0]` que contiene la ruta al ejecutable lanzado.
+            base_dir = Path(sys.argv[0]).resolve().parent
+        else:
+            base_dir = Path(__file__).resolve().parent.parent
+        self._data_file = base_dir / "tareas.json"
         self._load()
 
     def _load(self):
         if not self._data_file.exists():
+            # Si no existe archivo de datos, inicializamos con ejemplos
+            self._tareas = [
+                Tarea(1, "Comprar leche", False),
+                Tarea(2, "Entregar informe", True),
+            ]
+            self._next_id = 3
+            # Guardar para que el .exe tenga el archivo externo en la carpeta del ejecutable
+            self._save()
             return
         try:
             with open(self._data_file, "r", encoding="utf-8") as f:

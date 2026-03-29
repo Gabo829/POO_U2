@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "descripcion": "Comprar leche",
+    "completado": false
+  },
+  {
+    "id": 2,
+    "descripcion": "Entregar informe",
+    "completado": true
+  }
+]
